@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDGA Corp - 글로벌 반도체 기술 리더</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #001F3F;
+            --secondary: #003366;
+            --accent: #00B4D8;
+            --accent-light: #90E0EF;
+            --gold: #D4AF37;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 헤더 스타일 */
+        header {
+            background: rgba(0, 31, 63, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: white;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .language-selector {
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        .language-selector select {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            appearance: none;
+            padding-right: 30px;
+        }
+        
+        .language-selector::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            pointer-events: none;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* 히어로 섹션 - 회사 전경 사진으로 변경 */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 31, 63, 0.85) 0%, rgba(0, 52, 102, 0.75) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 200px 0 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 180, 216, 0.2);
+            color: var(--accent-light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #0099C7;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .hero-visual {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            height: 80%;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px 0 0 10px;
+            box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 섹션 공통 스타일 */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-subtitle {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .section-desc {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* 회사 소개 - 회사 전경 사진 추가 */
+        .about {
+            background: var(--light);
+            position: relative;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .about-visual {
+            position: relative;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--accent-light);
+            border-radius: 10px;
+            z-index: -1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* 제품 및 서비스 */
+        .services {
+            position: relative;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent);
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), rgba(144, 224, 239, 0.1));
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .service-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .service-link:hover {
+            color: var(--secondary);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* 기술력 */
+        .technology {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .technology::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .section-header.light .section-title,
+        .section-header.light .section-desc {
+            color: white;
+        }
+        
+        .tech-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .tech-stat {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .tech-stat:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            color: var(--accent-light);
+            margin-bottom: 20px;
+        }
+        
+        .tech-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--accent-light), white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tech-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA 섹션 */
+        .cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .btn-light {
+            background: white;
+            color: var(--accent);
+        }
+        
+        .btn-light:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 푸터 */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-light);
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-visual {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-actions {
+                display: none;
+            }
+            
+            .hero {
+                padding: 150px 0 100px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">E</div>
+                <div class="logo-text">EDGA<span>Corp</span></div>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" data-i18n="nav.home">홈</a></li>
+                    <li><a href="#about" data-i18n="nav.about">회사소개</a></li>
+                    <li><a href="#services" data-i18n="nav.services">제품/서비스</a></li>
+                    <li><a href="#technology" data-i18n="nav.technology">기술력</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">연락처</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="language-selector">
+                    <select id="language-selector">
+                        <option value="ko">한국어</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 - 회사 전경 사진으로 변경 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" data-i18n="hero.badge">
+                    <i class="fas fa-rocket"></i> 글로벌 반도체 기술 리더
+                </div>
+                <h1 data-i18n="hero.title">미래 기술을 선도하는<br>차세대 반도체 솔루션</h1>
+                <p data-i18n="hero.description">에드가주식회사는 혁신적인 반도체 기술로 디지털 트랜스포메이션 시대를 주도합니다. 최첨단 공정 기술과 품질 경영으로 더 나은 미래를 만들어갑니다.</p>
+                <div class="btn-group">
+                    <a href="#about" class="btn btn-primary" data-i18n="hero.cta.learn">더 알아보기</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta.contact">문의하기</a>
+                </div>
+            </div>
+            <div class="hero-visual"></div>
+        </div>
+    </section>
+
+    <!-- 회사 소개 - 회사 전경 사진 추가 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle" data-i18n="about.subtitle">About Us</div>
+                <h2 class="section-title" data-i18n="about.title">글로벌 반도체 산업의 리더</h2>
+                <p class="section-desc" data-i18n="about.description">에드가주식회사는 1995년 설립 이래로 혁신적인 반도체 기술 개발과 생산을 통해 글로벌 시장에서 두각을 나타내고 있습니다.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-i18n="about.subheading">기술 혁신과 품질 경영의 최우선</h3>
+                    <p data-i18n="about.paragraph1">에드가주식회사는 첨단 반도체 설계, 개발 및 생산을 위한 종합 솔루션을 제공하는 글로벌 기업입니다. 우리의 혁신적인 기술과 품질 경영 시스템은 고객에게 최고의 가치를 제공합니다.</p>
+                    <p data-i18n="about.paragraph2">전 세계 50개국 이상의 고객사와 파트너십을 통해 다양한 산업 분야에 최적화된 반도체 솔루션을 제공하고 있습니다. 지속적인 연구 개발 투자와 기술 혁신을 통해 4차 산업혁명 시대를 선도하는 기업으로 성장하고 있습니다.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">28+</div>
+                            <div class="stat-label" data-i18n="about.stats.years">설립 연차</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label" data-i18n="about.stats.engineers">전문 엔지니어</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label" data-i18n="about.stats.countries">진출 국가</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1,200+</div>
+                            <div class="stat-label" data-i18n="about.stats.patents">등록 특허</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="에드가주식회사 본사 전경" data-i18n="about.imageAlt">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 제품 및 서비스 -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle" data-i18n="services.subtitle">Our Solutions</div>
+                <h2 class="section-title" data-i18n="services.title">제품 및 서비스</h2>
+                <p class="section-desc" data-i18n="services.description">에드가주식회사는 다양한 산업 분야에 최적화된 반도체 솔루션을 제공합니다.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="services.memory.title">메모리 반도체</h3>
+                        <p data-i18n="services.memory.description">고성능 DRAM, NAND Flash 메모리 등 다양한 메모리 반도체 솔루션을 제공합니다. 데이터 중심 시대에 최적화된 고용량, 고속 메모리 제품을 개발합니다.</p>
+                        <a href="#" class="service-link" data-i18n="services.learnMore">
+                            자세히 보기 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="services.system.title">시스템 반도체</h3>
+                        <p data-i18n="services.system.description">AI, IoT, 자율주행 등 미래 기술을 위한 시스템 반도체를 개발합니다. 고성능 프로세서와 특수 목적 IC 설계 및 생산을 담당하고 있습니다.</p>
+                        <a href="#" class="service-link" data-i18n="services.learnMore">
+                            자세히 보기 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-i18n="services.foundry.title">파운드리 서비스</h3>
+                        <p data-i18n="services.foundry.description">최첨단 공정 기술을 바탕으로 고객 맞춤형 파운드리 서비스를 제공합니다. 다양한 공정 노드와 패키징 솔루션으로 고객의 요구에 부응합니다.</p>
+                        <a href="#" class="service-link" data-i18n="services.learnMore">
+                            자세히 보기 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기술력 -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <div class="section-header light">
+                <div class="section-subtitle" data-i18n="technology.subtitle">Our Technology</div>
+                <h2 class="section-title" data-i18n="technology.title">기술력</h2>
+                <p class="section-desc" data-i18n="technology.description">에드가주식회사의 기술적 우수성과 혁신을 보여주는 주요 지표입니다.</p>
+            </div>
+            
+            <div class="tech-stats">
+                <div class="tech-stat">
+                    <div class="tech-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <div class="tech-number">5nm</div>
+                    <div class="tech-label" data-i18n="technology.process">최첨단 공정 기술</div>
+                </div>
+                
+                <div class="tech-stat">
+                    <div class="tech-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="tech-number">1,200+</div>
+                    <div class="tech-label" data-i18n="technology.patents">등록 특허</div>
+                </div>
+                
+                <div class="tech-stat">
+                    <div class="tech-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="tech-number">50+</div>
+                    <div class="tech-label" data-i18n="technology.countries">진출 국가</div>
+                </div>
+                
+                <div class="tech-stat">
+                    <div class="tech-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="tech-number">15%</div>
+                    <div class="tech-label" data-i18n="technology.rd">매년 R&D 투자</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta">
+        <div class="container">
+            <h2 data-i18n="cta.title">함께 미래를 만들어 갈 인재를 찾습니다</h2>
+            <p data-i18n="cta.description">에드가주식회사와 함께 혁신적인 반도체 기술을 개발하며 글로벌 시장을 선도할 인재를 기다립니다.</p>
+            <a href="#" class="btn btn-light" data-i18n="cta.button">채용 정보 보기</a>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <h3 data-i18n="footer.about.title">에드가주식회사</h3>
+                    <p data-i18n="footer.about.description">글로벌 반도체 산업을 선도하는 혁신적인 기업으로서 최고의 기술과 품질로 고객 가치를 창출합니다.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-i18n="footer.quickLinks">빠른 링크</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-i18n="nav.home">홈</a></li>
+                        <li><a href="#about" data-i18n="nav.about">회사소개</a></li>
+                        <li><a href="#services" data-i18n="nav.services">제품/서비스</a></li>
+                        <li><a href="#technology" data-i18n="nav.technology">기술력</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">연락처</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-i18n="footer.legal.title">법적 정보</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.legal.privacy">개인정보처리방침</a></li>
+                        <li><a href="#" data-i18n="footer.legal.terms">이용약관</a></li>
+                        <li><a href="#" data-i18n="footer.legal.notice">법적고지</a></li>
+                        <li><a href="#" data-i18n="footer.legal.cookies">쿠키 정책</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-i18n="footer.contact.title">연락처 정보</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div data-i18n="footer.contact.address">서울특별시 강남구 테헤란로 123, 에드가타워 15층</div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>+82-2-1234-5678</div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>info@edgacorp.com</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 에드가주식회사. <span data-i18n="footer.copyright">모든 권리 보유.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 다국어 지원 데이터
+        const translations = {
+            ko: {
+                "nav.home": "홈",
+                "nav.about": "회사소개",
+                "nav.services": "제품/서비스",
+                "nav.technology": "기술력",
+                "nav.contact": "연락처",
+                "hero.badge": "글로벌 반도체 기술 리더",
+                "hero.title": "미래 기술을 선도하는<br>차세대 반도체 솔루션",
+                "hero.description": "에드가주식회사는 혁신적인 반도체 기술로 디지털 트랜스포메이션 시대를 주도합니다. 최첨단 공정 기술과 품질 경영으로 더 나은 미래를 만들어갑니다.",
+                "hero.cta.learn": "더 알아보기",
+                "hero.cta.contact": "문의하기",
+                "about.subtitle": "About Us",
+                "about.title": "글로벌 반도체 산업의 리더",
+                "about.description": "에드가주식회사는 1995년 설립 이래로 혁신적인 반도체 기술 개발과 생산을 통해 글로벌 시장에서 두각을 나타내고 있습니다.",
+                "about.subheading": "기술 혁신과 품질 경영의 최우선",
+                "about.paragraph1": "에드가주식회사는 첨단 반도체 설계, 개발 및 생산을 위한 종합 솔루션을 제공하는 글로벌 기업입니다. 우리의 혁신적인 기술과 품질 경영 시스템은 고객에게 최고의 가치를 제공합니다.",
+                "about.paragraph2": "전 세계 50개국 이상의 고객사와 파트너십을 통해 다양한 산업 분야에 최적화된 반도체 솔루션을 제공하고 있습니다. 지속적인 연구 개발 투자와 기술 혁신을 통해 4차 산업혁명 시대를 선도하는 기업으로 성장하고 있습니다.",
+                "about.stats.years": "설립 연차",
+                "about.stats.engineers": "전문 엔지니어",
+                "about.stats.countries": "진출 국가",
+                "about.stats.patents": "등록 특허",
+                "about.imageAlt": "에드가주식회사 본사 전경",
+                "services.subtitle": "Our Solutions",
+                "services.title": "제품 및 서비스",
+                "services.description": "에드가주식회사는 다양한 산업 분야에 최적화된 반도체 솔루션을 제공합니다.",
+                "services.memory.title": "메모리 반도체",
+                "services.memory.description": "고성능 DRAM, NAND Flash 메모리 등 다양한 메모리 반도체 솔루션을 제공합니다. 데이터 중심 시대에 최적화된 고용량, 고속 메모리 제품을 개발합니다.",
+                "services.system.title": "시스템 반도체",
+                "services.system.description": "AI, IoT, 자율주행 등 미래 기술을 위한 시스템 반도체를 개발합니다. 고성능 프로세서와 특수 목적 IC 설계 및 생산을 담당하고 있습니다.",
+                "services.foundry.title": "파운드리 서비스",
+                "services.foundry.description": "최첨단 공정 기술을 바탕으로 고객 맞춤형 파운드리 서비스를 제공합니다. 다양한 공정 노드와 패키징 솔루션으로 고객의 요구에 부응합니다.",
+                "services.learnMore": "자세히 보기",
+                "technology.subtitle": "Our Technology",
+                "technology.title": "기술력",
+                "technology.description": "에드가주식회사의 기술적 우수성과 혁신을 보여주는 주요 지표입니다.",
+                "technology.process": "최첨단 공정 기술",
+                "technology.patents": "등록 특허",
+                "technology.countries": "진출 국가",
+                "technology.rd": "매년 R&D 투자",
+                "cta.title": "함께 미래를 만들어 갈 인재를 찾습니다",
+                "cta.description": "에드가주식회사와 함께 혁신적인 반도체 기술을 개발하며 글로벌 시장을 선도할 인재를 기다립니다.",
+                "cta.button": "채용 정보 보기",
+                "footer.about.title": "에드가주식회사",
+                "footer.about.description": "글로벌 반도체 산업을 선도하는 혁신적인 기업으로서 최고의 기술과 품질로 고객 가치를 창출합니다.",
+                "footer.quickLinks": "빠른 링크",
+                "footer.legal.title": "법적 정보",
+                "footer.legal.privacy": "개인정보처리방침",
+                "footer.legal.terms": "이용약관",
+                "footer.legal.notice": "법적고지",
+                "footer.legal.cookies": "쿠키 정책",
+                "footer.contact.title": "연락처 정보",
+                "footer.contact.address": "서울특별시 강남구 테헤란로 123, 에드가타워 15층",
+                "footer.copyright": "모든 권리 보유."
+            },
+            en: {
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.services": "Products/Services",
+                "nav.technology": "Technology",
+                "nav.contact": "Contact",
+                "hero.badge": "Global Semiconductor Technology Leader",
+                "hero.title": "Leading Future Technology<br>Next-Generation Semiconductor Solutions",
+                "hero.description": "EDGA Corp leads the digital transformation era with innovative semiconductor technology. We create a better future with cutting-edge process technology and quality management.",
+                "hero.cta.learn": "Learn More",
+                "hero.cta.contact": "Contact Us",
+                "about.subtitle": "About Us",
+                "about.title": "Leader in Global Semiconductor Industry",
+                "about.description": "Since its establishment in 1995, EDGA Corp has stood out in the global market through innovative semiconductor technology development and production.",
+                "about.subheading": "Technology Innovation and Quality Management First",
+                "about.paragraph1": "EDGA Corp is a global company providing comprehensive solutions for advanced semiconductor design, development, and production. Our innovative technology and quality management systems deliver the highest value to customers.",
+                "about.paragraph2": "We provide optimized semiconductor solutions for various industries through partnerships with customers in over 50 countries worldwide. We are growing as a company leading the 4th industrial revolution era through continuous R&D investment and technological innovation.",
+                "about.stats.years": "Years Established",
+                "about.stats.engineers": "Expert Engineers",
+                "about.stats.countries": "Countries Reached",
+                "about.stats.patents": "Registered Patents",
+                "about.imageAlt": "EDGA Corp Headquarters",
+                "services.subtitle": "Our Solutions",
+                "services.title": "Products & Services",
+                "services.description": "EDGA Corp provides semiconductor solutions optimized for various industries.",
+                "services.memory.title": "Memory Semiconductors",
+                "services.memory.description": "We provide various memory semiconductor solutions including high-performance DRAM and NAND Flash memory. We develop high-capacity, high-speed memory products optimized for the data-centric era.",
+                "services.system.title": "System Semiconductors",
+                "services.system.description": "We develop system semiconductors for future technologies such as AI, IoT, and autonomous driving. We are responsible for designing and producing high-performance processors and application-specific ICs.",
+                "services.foundry.title": "Foundry Services",
+                "services.foundry.description": "We provide customized foundry services based on cutting-edge process technology. We respond to customer needs with various process nodes and packaging solutions.",
+                "services.learnMore": "Learn More",
+                "technology.subtitle": "Our Technology",
+                "technology.title": "Technological Capabilities",
+                "technology.description": "Key indicators showing EDGA Corp's technological excellence and innovation.",
+                "technology.process": "Advanced Process Technology",
+                "technology.patents": "Registered Patents",
+                "technology.countries": "Countries Reached",
+                "technology.rd": "Annual R&D Investment",
+                "cta.title": "Looking for Talents to Create the Future Together",
+                "cta.description": "We are waiting for talents who will develop innovative semiconductor technology and lead the global market with EDGA Corp.",
+                "cta.button": "View Career Opportunities",
+                "footer.about.title": "EDGA Corp",
+                "footer.about.description": "As an innovative company leading the global semiconductor industry, we create customer value with the best technology and quality.",
+                "footer.quickLinks": "Quick Links",
+                "footer.legal.title": "Legal Information",
+                "footer.legal.privacy": "Privacy Policy",
+                "footer.legal.terms": "Terms of Use",
+                "footer.legal.notice": "Legal Notice",
+                "footer.legal.cookies": "Cookie Policy",
+                "footer.contact.title": "Contact Information",
+                "footer.contact.address": "123 Teheran-ro, Gangnam-gu, Seoul, EDGA Tower 15F",
+                "footer.copyright": "All Rights Reserved."
+            },
+            ja: {
+                "nav.home": "ホーム",
+                "nav.about": "会社概要",
+                "nav.services": "製品/サービス",
+                "nav.technology": "技術力",
+                "nav.contact": "お問い合わせ",
+                "hero.badge": "グローバル半導体技術リーダー",
+                "hero.title": "未来技術をリードする<br>次世代半導体ソリューション",
+                "hero.description": "EDGA株式会社は、革新的な半導体技術でデジタルトランスフォーメーション時代を主導します。最先端プロセス技術と品質経営でより良い未来を創ります。",
+                "hero.cta.learn": "詳細を見る",
+                "hero.cta.contact": "お問い合わせ",
+                "about.subtitle": "About Us",
+                "about.title": "グローバル半導体産業のリーダー",
+                "about.description": "EDGA株式会社は1995年の設立以来、革新的な半導体技術の開発と生産を通じてグローバル市場で頭角を現しています。",
+                "about.subheading": "技術革新と品質経営の最優先",
+                "about.paragraph1": "EDGA株式会社は、先端半導体の設計、開発、生産のための総合ソリューションを提供するグローバル企業です。私たちの革新的な技術と品質経営システムは、顧客に最高の価値を提供します。",
+                "about.paragraph2": "全世界50カ国以上の顧客企業とのパートナーシップを通じて、様々な産業分野に最適化された半導体ソリューションを提供しています。持続的な研究開発投資と技術革新を通じて、第4次産業革命時代をリードする企業として成長しています。",
+                "about.stats.years": "設立年数",
+                "about.stats.engineers": "専門エンジニア",
+                "about.stats.countries": "進出国",
+                "about.stats.patents": "登録特許",
+                "about.imageAlt": "EDGA株式会社本社全景",
+                "services.subtitle": "Our Solutions",
+                "services.title": "製品及びサービス",
+                "services.description": "EDGA株式会社は、様々な産業分野に最適化された半導体ソリューションを提供します。",
+                "services.memory.title": "メモリ半導体",
+                "services.memory.description": "高性能DRAM、NAND Flashメモリなど、様々なメモリ半導体ソリューションを提供します。データ中心時代に最適化された高容量、高速メモリ製品を開発します。",
+                "services.system.title": "システム半導体",
+                "services.system.description": "AI、IoT、自動運転などの未来技術のためのシステム半導体を開発します。高性能プロセッサと特定用途向けICの設計及び生産を担当しています。",
+                "services.foundry.title": "ファウンドリサービス",
+                "services.foundry.description": "最先端プロセス技術に基づいて顧客カスタマイズ型ファウンドリサービスを提供します。様々なプロセスノードとパッケージングソリューションで顧客の要求に応えます。",
+                "services.learnMore": "詳細を見る",
+                "technology.subtitle": "Our Technology",
+                "technology.title": "技術力",
+                "technology.description": "EDGA株式会社の技術的优秀性と革新を示す主要指標です。",
+                "technology.process": "最先端プロセス技術",
+                "technology.patents": "登録特許",
+                "technology.countries": "進出国",
+                "technology.rd": "年間R&D投資",
+                "cta.title": "共に未来を創る人材を求めています",
+                "cta.description": "EDGA株式会社と共に革新的な半導体技術を開発し、グローバル市場をリードする人材をお待ちしています。",
+                "cta.button": "採用情報を見る",
+                "footer.about.title": "EDGA株式会社",
+                "footer.about.description": "グローバル半導体産業をリードする革新的企業として、最高の技術と品質で顧客価値を創出します。",
+                "footer.quickLinks": "クイックリンク",
+                "footer.legal.title": "法的情報",
+                "footer.legal.privacy": "個人情報保護方針",
+                "footer.legal.terms": "利用規約",
+                "footer.legal.notice": "法的通知",
+                "footer.legal.cookies": "クッキーポリシー",
+                "footer.contact.title": "連絡先情報",
+                "footer.contact.address": "ソウル特別市 江南区 テヘラン路 123, EDGAタワー 15階",
+                "footer.copyright": "全著作権所有."
+            },
+            zh: {
+                "nav.home": "首页",
+                "nav.about": "公司介绍",
+                "nav.services": "产品/服务",
+                "nav.technology": "技术实力",
+                "nav.contact": "联系我们",
+                "hero.badge": "全球半导体技术领导者",
+                "hero.title": "引领未来技术<br>下一代半导体解决方案",
+                "hero.description": "EDGA株式会社通过创新半导体技术引领数字化转型时代。我们以尖端工艺技术和质量管理创造更美好的未来。",
+                "hero.cta.learn": "了解更多",
+                "hero.cta.contact": "联系我们",
+                "about.subtitle": "About Us",
+                "about.title": "全球半导体行业领导者",
+                "about.description": "EDGA株式会社自1995年成立以来，通过创新半导体技术开发和生产在全球市场中脱颖而出。",
+                "about.subheading": "技术创新与质量管理优先",
+                "about.paragraph1": "EDGA株式会社是为先进半导体设计、开发和生产提供综合解决方案的全球企业。我们的创新技术和质量管理体系为客户提供最高价值。",
+                "about.paragraph2": "我们通过与全球50多个国家的客户企业合作，为各种行业领域提供优化的半导体解决方案。通过持续研发投资和技术创新，我们正成长为引领第四次工业革命时代的企业。",
+                "about.stats.years": "成立年限",
+                "about.stats.engineers": "专业工程师",
+                "about.stats.countries": "进军国家",
+                "about.stats.patents": "注册专利",
+                "about.imageAlt": "EDGA株式会社总部全景",
+                "services.subtitle": "Our Solutions",
+                "services.title": "产品与服务",
+                "services.description": "EDGA株式会社为各种行业领域提供优化的半导体解决方案。",
+                "services.memory.title": "存储器半导体",
+                "services.memory.description": "我们提供包括高性能DRAM和NAND闪存在内的各种存储器半导体解决方案。我们开发针对数据为中心时代优化的高容量、高速存储器产品。",
+                "services.system.title": "系统半导体",
+                "services.system.description": "我们为AI、物联网、自动驾驶等未来技术开发系统半导体。我们负责设计和生产高性能处理器和专用集成电路。",
+                "services.foundry.title": "晶圆代工服务",
+                "services.foundry.description": "我们基于尖端工艺技术提供客户定制化晶圆代工服务。我们通过各种工艺节点和封装解决方案满足客户需求。",
+                "services.learnMore": "了解更多",
+                "technology.subtitle": "Our Technology",
+                "technology.title": "技术实力",
+                "technology.description": "展示EDGA株式会社技术卓越性和创新的主要指标。",
+                "technology.process": "尖端工艺技术",
+                "technology.patents": "注册专利",
+                "technology.countries": "进军国家",
+                "technology.rd": "年度研发投资",
+                "cta.title": "寻找共同创造未来的人才",
+                "cta.description": "我们期待与EDGA株式会社一起开发创新半导体技术并引领全球市场的人才。",
+                "cta.button": "查看招聘信息",
+                "footer.about.title": "EDGA株式会社",
+                "footer.about.description": "作为引领全球半导体行业的创新企业，我们以最佳技术和品质创造客户价值。",
+                "footer.quickLinks": "快速链接",
+                "footer.legal.title": "法律信息",
+                "footer.legal.privacy": "隐私政策",
+                "footer.legal.terms": "使用条款",
+                "footer.legal.notice": "法律声明",
+                "footer.legal.cookies": "Cookie政策",
+                "footer.contact.title": "联系信息",
+                "footer.contact.address": "首尔特别市 江南区 德黑兰路 123, EDGA塔 15楼",
+                "footer.copyright": "版权所有."
+            }
+        };
+
+        // 현재 언어 설정 (기본값: 한국어)
+        let currentLanguage = 'ko';
+
+        // 언어 변경 함수
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // 모든 다국어 요소 업데이트
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        // HTML 태그가 포함된 경우 처리
+                        if (translations[lang][key].includes('<br>')) {
+                            element.innerHTML = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                }
+            });
+            
+            // 언어 선택기 업데이트
+            document.getElementById('language-selector').value = lang;
+            
+            // 언어 설정을 localStorage에 저장
+            localStorage.setItem('preferred-language', lang);
+            
+            // HTML lang 속성 업데이트
+            document.documentElement.lang = lang;
+        }
+
+        // 페이지 로드 시 언어 설정
+        document.addEventListener('DOMContentLoaded', function() {
+            // 저장된 언어 선호도 확인
+            const savedLanguage = localStorage.getItem('preferred-language');
+            if (savedLanguage) {
+                changeLanguage(savedLanguage);
+            } else {
+                // 브라우저 언어 감지
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang.startsWith('ko')) {
+                    changeLanguage('ko');
+                } else if (browserLang.startsWith('ja')) {
+                    changeLanguage('ja');
+                } else if (browserLang.startsWith('zh')) {
+                    changeLanguage('zh');
+                } else {
+                    changeLanguage('en');
+                }
+            }
+            
+            // 언어 선택 이벤트 리스너
+            document.getElementById('language-selector').addEventListener('change', function() {
+                changeLanguage(this.value);
+            });
+        });
+
+        // 헤더 스크롤 효과
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 31, 63, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(0, 31, 63, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // 모바일 메뉴 토글
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // 네비게이션 링크 스크롤 부드럽게
+        document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 모바일에서 메뉴 닫기
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('nav').style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
