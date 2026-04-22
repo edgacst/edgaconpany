@@ -843,6 +843,400 @@
             background-position: center;
         }
         
+        .careers-detail .service-hero {
+            background:
+                radial-gradient(ellipse 120% 80% at 20% 20%, rgba(144, 224, 239, 0.45) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 60% at 90% 80%, rgba(0, 119, 182, 0.5) 0%, transparent 45%),
+                linear-gradient(145deg, #48CAE4 0%, var(--accent) 38%, #0077B6 72%, #023E8A 100%);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .careers-detail .service-hero::before {
+            background: linear-gradient(180deg, rgba(0, 31, 63, 0.12) 0%, rgba(0, 31, 63, 0.45) 100%);
+        }
+        
+        .careers-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+        
+        .careers-why {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f0fbff 0%, #fff 45%);
+        }
+        
+        .careers-section-head {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 56px;
+        }
+        
+        .careers-section-head h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 14px;
+            letter-spacing: -0.03em;
+        }
+        
+        .careers-section-head p {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+        
+        .careers-value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        .careers-value-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem 1.75rem;
+            border: 1px solid rgba(0, 180, 216, 0.18);
+            box-shadow: 0 12px 40px rgba(0, 31, 63, 0.06);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .careers-value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .careers-value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(0, 180, 216, 0.15);
+        }
+        
+        .careers-value-card:hover::before {
+            opacity: 1;
+        }
+        
+        .careers-value-card .cv-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.15), rgba(144, 224, 239, 0.35));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0077B6;
+            font-size: 1.35rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .careers-value-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .careers-value-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+        
+        .careers-positions {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .careers-job-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        .careers-job-card {
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            box-shadow: 0 4px 24px rgba(0, 31, 63, 0.05);
+        }
+        
+        .careers-job-card:hover {
+            border-color: rgba(0, 180, 216, 0.45);
+            box-shadow: 0 20px 48px rgba(0, 119, 182, 0.12);
+        }
+        
+        .careers-job-card header {
+            padding: 1.5rem 1.5rem 1rem;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.08), rgba(144, 224, 239, 0.2));
+        }
+        
+        .careers-job-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .careers-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .careers-tags span {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(0, 180, 216, 0.12);
+            color: #0077B6;
+        }
+        
+        .careers-job-card .job-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .careers-job-card .job-body p {
+            color: var(--gray);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 1.25rem;
+        }
+        
+        .careers-job-meta {
+            font-size: 0.8rem;
+            color: var(--gray);
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .careers-job-card .btn-job {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: #fff;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 14px rgba(0, 180, 216, 0.25);
+            transition: var(--transition);
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .careers-job-card .btn-job:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+        
+        .careers-process {
+            padding: 100px 0;
+            background: linear-gradient(160deg, var(--primary) 0%, #003d6b 50%, #001a33 100%);
+            color: #fff;
+        }
+        
+        .careers-process .careers-section-head h2 {
+            color: #fff;
+        }
+        
+        .careers-process .careers-section-head p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+        
+        .careers-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+        
+        .careers-step {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: var(--transition);
+        }
+        
+        .careers-step:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+        
+        .careers-step-num {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--primary);
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        
+        .careers-step h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .careers-step p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            line-height: 1.55;
+        }
+        
+        .careers-perks {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .careers-perk-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        
+        .careers-perk {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 1.35rem 1.5rem;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #e9ecef;
+            transition: var(--transition);
+        }
+        
+        .careers-perk:hover {
+            border-color: rgba(0, 180, 216, 0.35);
+        }
+        
+        .careers-perk i {
+            color: var(--accent);
+            font-size: 1.25rem;
+            margin-top: 3px;
+        }
+        
+        .careers-perk span {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.98rem;
+        }
+        
+        .careers-bottom-cta {
+            padding: 88px 0;
+            text-align: center;
+            background: linear-gradient(120deg, #48CAE4 0%, var(--accent) 50%, #0096C7 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .careers-bottom-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        
+        .careers-bottom-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .careers-bottom-cta h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+        
+        .careers-bottom-cta > .container > p {
+            max-width: 520px;
+            margin: 0 auto 28px;
+            opacity: 0.95;
+            font-size: 1.05rem;
+        }
+        
+        .btn-careers-glow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            border-radius: 14px;
+            background: #fff;
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            transition: var(--transition);
+        }
+        
+        .btn-careers-glow:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+            color: #0077B6;
+        }
+        
+        @media (max-width: 992px) {
+            .careers-value-grid,
+            .careers-job-grid,
+            .careers-perk-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .careers-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .careers-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         /* 반응형 디자인 */
         @media (max-width: 1200px) {
             .hero h1 {
@@ -1140,7 +1534,7 @@
             <div class="container">
                 <h2 data-i18n="cta.title">함께 미래를 만들어 갈 인재를 찾습니다</h2>
                 <p data-i18n="cta.description">에드가주식회사와 함께 혁신적인 반도체 기술을 개발하며 글로벌 시장을 선도할 인재를 기다립니다.</p>
-                <a href="#" class="btn btn-light" data-i18n="cta.button">채용 정보 보기</a>
+                <a href="#" class="btn btn-light" onclick="showDetailPage('careers'); return false;" data-i18n="cta.button">채용 정보 보기</a>
             </div>
         </section>
     </div>
@@ -1313,6 +1707,151 @@
         </section>
     </div>
 
+    <!-- 채용 상세 페이지 -->
+    <div id="careers-detail" class="detail-page careers-detail">
+        <section class="service-hero">
+            <div class="container">
+                <div class="service-breadcrumb">
+                    <a onclick="showHomePage()" data-i18n="nav.home">홈</a>
+                    <span>></span>
+                    <a data-i18n="nav.careers">채용</a>
+                </div>
+                <div class="service-hero-content">
+                    <div class="careers-hero-badge" data-i18n="careers.hero.tag">SAMPLE · 2026 상반기 채용</div>
+                    <h1 data-i18n="careers.hero.title">차세대 반도체를 함께 설계할 동료를 찾습니다</h1>
+                    <p data-i18n="careers.hero.lead">첨단 공정과 설계를 아우르는 엔지니어·연구·운영 직군을 상시 모집합니다. 아래는 샘플 포지션입니다.</p>
+                    <a href="#careers-open" class="btn-careers-glow" data-i18n="careers.hero.btn">열린 포지션 보기</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-why">
+            <div class="container">
+                <div class="careers-section-head">
+                    <h2 data-i18n="careers.why.h">왜 에드가인가</h2>
+                    <p data-i18n="careers.why.sub">기술에 집중하는 조직, 글로벌 고객과의 협업, 그리고 성장을 위한 투자가 만나는 곳입니다.</p>
+                </div>
+                <div class="careers-value-grid">
+                    <div class="careers-value-card">
+                        <div class="cv-icon"><i class="fas fa-microchip"></i></div>
+                        <h3 data-i18n="careers.why.1t">기술 중심 문화</h3>
+                        <p data-i18n="careers.why.1d">최신 공정·설계 스택을 다루며, 내부 기술 세미나와 해커톤으로 아이디어를 빠르게 검증합니다.</p>
+                    </div>
+                    <div class="careers-value-card">
+                        <div class="cv-icon"><i class="fas fa-earth-asia"></i></div>
+                        <h3 data-i18n="careers.why.2t">글로벌 프로젝트</h3>
+                        <p data-i18n="careers.why.2d">50개국 이상 파트너와 협업하며, 현지 법인·고객사와 긴밀히 소통하는 프로젝트를 경험할 수 있습니다.</p>
+                    </div>
+                    <div class="careers-value-card">
+                        <div class="cv-icon"><i class="fas fa-seedling"></i></div>
+                        <h3 data-i18n="careers.why.3t">성장과 워라밸</h3>
+                        <p data-i18n="careers.why.3d">멘토링·학습비·건강검진·유연 근무 등 복지 패키지와 함께, 개인 성장 계획을 팀과 함께 세웁니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-positions" id="careers-open">
+            <div class="container">
+                <div class="careers-section-head">
+                    <h2 data-i18n="careers.open.h">열린 포지션</h2>
+                    <p data-i18n="careers.open.sub">관심 분야를 선택해 JD를 확인하고, 아래 채용 문의로 포트폴리오를 보내주세요.</p>
+                </div>
+                <div class="careers-job-grid">
+                    <article class="careers-job-card">
+                        <header>
+                            <h3 data-i18n="careers.j1.title">SoC 설계 엔지니어</h3>
+                            <div class="careers-tags"><span data-i18n="careers.j1.tag1">경력 3년+</span><span data-i18n="careers.j1.tag2">분당</span></div>
+                        </header>
+                        <div class="job-body">
+                            <p data-i18n="careers.j1.desc">고성능 시스템온칩 RTL 설계·검증, 저전력 아키텍처 최적화 경험자를 우대합니다.</p>
+                            <div class="careers-job-meta" data-i18n="careers.j1.meta">채용 시 마감 · 면접 파트 3회</div>
+                            <a class="btn-job" onclick="showHomePage(); window.location.hash='contact'; return false;" data-i18n="careers.j.apply">지원 문의</a>
+                        </div>
+                    </article>
+                    <article class="careers-job-card">
+                        <header>
+                            <h3 data-i18n="careers.j2.title">공정 통합 엔지니어</h3>
+                            <div class="careers-tags"><span data-i18n="careers.j2.tag1">신입·경력</span><span data-i18n="careers.j2.tag2">기흥</span></div>
+                        </header>
+                        <div class="job-body">
+                            <p data-i18n="careers.j2.desc">EUV·패터닝 공정 연동, 수율 개선 데이터 분석에 강점이 있는 분을 찾습니다.</p>
+                            <div class="careers-job-meta" data-i18n="careers.j2.meta">2026.05.30 마감 · 상반기 입사</div>
+                            <a class="btn-job" onclick="showHomePage(); window.location.hash='contact'; return false;" data-i18n="careers.j.apply">지원 문의</a>
+                        </div>
+                    </article>
+                    <article class="careers-job-card">
+                        <header>
+                            <h3 data-i18n="careers.j3.title">클라우드 인프라 엔지니어</h3>
+                            <div class="careers-tags"><span data-i18n="careers.j3.tag1">경력</span><span data-i18n="careers.j3.tag2">서울</span></div>
+                        </header>
+                        <div class="job-body">
+                            <p data-i18n="careers.j3.desc">EDA·시뮬레이션 워크로드를 위한 HPC 클러스터 운영, FinOps 관점의 비용 최적화 경험을 기대합니다.</p>
+                            <div class="careers-job-meta" data-i18n="careers.j3.meta">상시 채용 · 비대면 1차</div>
+                            <a class="btn-job" onclick="showHomePage(); window.location.hash='contact'; return false;" data-i18n="careers.j.apply">지원 문의</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-process">
+            <div class="container">
+                <div class="careers-section-head">
+                    <h2 data-i18n="careers.proc.h">채용 프로세스</h2>
+                    <p data-i18n="careers.proc.sub">투명한 단계와 빠른 피드백을 약속드립니다.</p>
+                </div>
+                <div class="careers-steps">
+                    <div class="careers-step">
+                        <div class="careers-step-num">1</div>
+                        <h4 data-i18n="careers.s1.t">서류 전형</h4>
+                        <p data-i18n="careers.s1.d">이력서·포트폴리오·자기소개서로 역량과 컬처 핏을 확인합니다.</p>
+                    </div>
+                    <div class="careers-step">
+                        <div class="careers-step-num">2</div>
+                        <h4 data-i18n="careers.s2.t">기술 인터뷰</h4>
+                        <p data-i18n="careers.s2.d">직무 핵심 역량과 문제 해결 과정을 심층적으로 논의합니다.</p>
+                    </div>
+                    <div class="careers-step">
+                        <div class="careers-step-num">3</div>
+                        <h4 data-i18n="careers.s3.t">컬처 인터뷰</h4>
+                        <p data-i18n="careers.s3.d">협업 스타일과 가치관을 팀과 맞춰봅니다.</p>
+                    </div>
+                    <div class="careers-step">
+                        <div class="careers-step-num">4</div>
+                        <h4 data-i18n="careers.s4.t">처우 협의 · 입사</h4>
+                        <p data-i18n="careers.s4.d">연봉·복지·온보딩 일정을 조율하고 합류를 환영합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-perks">
+            <div class="container">
+                <div class="careers-section-head">
+                    <h2 data-i18n="careers.perk.h">복지 · 문화</h2>
+                    <p data-i18n="careers.perk.sub">샘플 구성이며, 실제 정책은 입사 시 안내드립니다.</p>
+                </div>
+                <div class="careers-perk-grid">
+                    <div class="careers-perk"><i class="fas fa-book"></i><span data-i18n="careers.p1">도서·교육비 지원</span></div>
+                    <div class="careers-perk"><i class="fas fa-house-laptop"></i><span data-i18n="careers.p2">하이브리드 근무</span></div>
+                    <div class="careers-perk"><i class="fas fa-utensils"></i><span data-i18n="careers.p3">중식·석식 제공</span></div>
+                    <div class="careers-perk"><i class="fas fa-heart-pulse"></i><span data-i18n="careers.p4">종합 건강검진</span></div>
+                    <div class="careers-perk"><i class="fas fa-plane-departure"></i><span data-i18n="careers.p5">리프레시 휴가</span></div>
+                    <div class="careers-perk"><i class="fas fa-people-group"></i><span data-i18n="careers.p6">사내 커뮤니티</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-bottom-cta">
+            <div class="container">
+                <h2 data-i18n="careers.bottom.h">지금 팀에 합류할 준비가 되셨나요?</h2>
+                <p data-i18n="careers.bottom.p">채용 담당자가 검토 후 5영업일 이내 회신 드립니다. (샘플 문구)</p>
+                <a class="btn-careers-glow" onclick="showHomePage(); window.location.hash='contact'; return false;" data-i18n="careers.bottom.btn">채용 팀에 문의하기</a>
+            </div>
+        </section>
+    </div>
+
     <!-- 푸터 -->
     <footer id="contact">
         <div class="container">
@@ -1449,6 +1988,58 @@
                 "detail.foundry.stat2": "첨단 리소그래피",
                 "detail.foundry.stat3": "생산 수율",
                 "detail.foundry.stat4": "패키징 기술",
+                "nav.careers": "채용",
+                "careers.hero.tag": "SAMPLE · 2026 상반기 채용",
+                "careers.hero.title": "차세대 반도체를 함께 설계할 동료를 찾습니다",
+                "careers.hero.lead": "첨단 공정과 설계를 아우르는 엔지니어·연구·운영 직군을 상시 모집합니다. 아래는 샘플 포지션입니다.",
+                "careers.hero.btn": "열린 포지션 보기",
+                "careers.why.h": "왜 에드가인가",
+                "careers.why.sub": "기술에 집중하는 조직, 글로벌 고객과의 협업, 그리고 성장을 위한 투자가 만나는 곳입니다.",
+                "careers.why.1t": "기술 중심 문화",
+                "careers.why.1d": "최신 공정·설계 스택을 다루며, 내부 기술 세미나와 해커톤으로 아이디어를 빠르게 검증합니다.",
+                "careers.why.2t": "글로벌 프로젝트",
+                "careers.why.2d": "50개국 이상 파트너와 협업하며, 현지 법인·고객사와 긴밀히 소통하는 프로젝트를 경험할 수 있습니다.",
+                "careers.why.3t": "성장과 워라밸",
+                "careers.why.3d": "멘토링·학습비·건강검진·유연 근무 등 복지 패키지와 함께, 개인 성장 계획을 팀과 함께 세웁니다.",
+                "careers.open.h": "열린 포지션",
+                "careers.open.sub": "관심 분야를 선택해 JD를 확인하고, 채용 문의로 포트폴리오를 보내주세요.",
+                "careers.j1.title": "SoC 설계 엔지니어",
+                "careers.j1.tag1": "경력 3년+",
+                "careers.j1.tag2": "분당",
+                "careers.j1.desc": "고성능 시스템온칩 RTL 설계·검증, 저전력 아키텍처 최적화 경험자를 우대합니다.",
+                "careers.j1.meta": "채용 시 마감 · 면접 파트 3회",
+                "careers.j2.title": "공정 통합 엔지니어",
+                "careers.j2.tag1": "신입·경력",
+                "careers.j2.tag2": "기흥",
+                "careers.j2.desc": "EUV·패터닝 공정 연동, 수율 개선 데이터 분석에 강점이 있는 분을 찾습니다.",
+                "careers.j2.meta": "2026.05.30 마감 · 상반기 입사",
+                "careers.j3.title": "클라우드 인프라 엔지니어",
+                "careers.j3.tag1": "경력",
+                "careers.j3.tag2": "서울",
+                "careers.j3.desc": "EDA·시뮬레이션 워크로드를 위한 HPC 클러스터 운영, FinOps 관점의 비용 최적화 경험을 기대합니다.",
+                "careers.j3.meta": "상시 채용 · 비대면 1차",
+                "careers.j.apply": "지원 문의",
+                "careers.proc.h": "채용 프로세스",
+                "careers.proc.sub": "투명한 단계와 빠른 피드백을 약속드립니다.",
+                "careers.s1.t": "서류 전형",
+                "careers.s1.d": "이력서·포트폴리오·자기소개서로 역량과 컬처 핏을 확인합니다.",
+                "careers.s2.t": "기술 인터뷰",
+                "careers.s2.d": "직무 핵심 역량과 문제 해결 과정을 심층적으로 논의합니다.",
+                "careers.s3.t": "컬처 인터뷰",
+                "careers.s3.d": "협업 스타일과 가치관을 팀과 맞춰봅니다.",
+                "careers.s4.t": "처우 협의 · 입사",
+                "careers.s4.d": "연봉·복지·온보딩 일정을 조율하고 합류를 환영합니다.",
+                "careers.perk.h": "복지 · 문화",
+                "careers.perk.sub": "샘플 구성이며, 실제 정책은 입사 시 안내드립니다.",
+                "careers.p1": "도서·교육비 지원",
+                "careers.p2": "하이브리드 근무",
+                "careers.p3": "중식·석식 제공",
+                "careers.p4": "종합 건강검진",
+                "careers.p5": "리프레시 휴가",
+                "careers.p6": "사내 커뮤니티",
+                "careers.bottom.h": "지금 팀에 합류할 준비가 되셨나요?",
+                "careers.bottom.p": "채용 담당자가 검토 후 5영업일 이내 회신 드립니다. (샘플 문구)",
+                "careers.bottom.btn": "채용 팀에 문의하기",
                 "footer.about.title": "에드가주식회사",
                 "footer.about.description": "글로벌 반도체 산업을 선도하는 혁신적인 기업으로서 최고의 기술과 품질로 고객 가치를 창출합니다.",
                 "footer.quickLinks": "빠른 링크",
@@ -1527,6 +2118,58 @@
                 "detail.foundry.stat2": "Advanced Lithography",
                 "detail.foundry.stat3": "Production Yield",
                 "detail.foundry.stat4": "Packaging Technology",
+                "nav.careers": "Careers",
+                "careers.hero.tag": "SAMPLE · H1 2026 Hiring",
+                "careers.hero.title": "Join us to design the next generation of semiconductors",
+                "careers.hero.lead": "We hire engineers, researchers, and operations talent across advanced process and design. Positions below are samples.",
+                "careers.hero.btn": "View open roles",
+                "careers.why.h": "Why EDGA",
+                "careers.why.sub": "Where deep tech focus, global collaboration, and investment in people come together.",
+                "careers.why.1t": "Engineering-first culture",
+                "careers.why.1d": "Work with modern process and design stacks; internal tech talks and hackathons to validate ideas quickly.",
+                "careers.why.2t": "Global programs",
+                "careers.why.2d": "Collaborate with partners in 50+ countries alongside regional teams and customers.",
+                "careers.why.3t": "Growth & balance",
+                "careers.why.3d": "Mentoring, learning budget, health checks, flexible work—and growth plans co-owned with your team.",
+                "careers.open.h": "Open positions",
+                "careers.open.sub": "Pick a track, read the JD, and send your portfolio via the hiring contact.",
+                "careers.j1.title": "SoC Design Engineer",
+                "careers.j1.tag1": "3+ yrs exp.",
+                "careers.j1.tag2": "Bundang",
+                "careers.j1.desc": "RTL design/verification for high-performance SoCs; low-power architecture experience preferred.",
+                "careers.j1.meta": "Open until filled · 3 interview rounds",
+                "careers.j2.title": "Process Integration Engineer",
+                "careers.j2.tag1": "Junior/Senior",
+                "careers.j2.tag2": "Giheung",
+                "careers.j2.desc": "EUV/patterning integration and yield analytics—we value strong data instincts.",
+                "careers.j2.meta": "Apply by May 30, 2026 · H1 start",
+                "careers.j3.title": "Cloud Infrastructure Engineer",
+                "careers.j3.tag1": "Experienced",
+                "careers.j3.tag2": "Seoul",
+                "careers.j3.desc": "HPC for EDA/simulation workloads; FinOps-style cost optimization is a plus.",
+                "careers.j3.meta": "Rolling · remote-friendly screen",
+                "careers.j.apply": "Apply / inquire",
+                "careers.proc.h": "Hiring process",
+                "careers.proc.sub": "Clear steps and prompt feedback at every stage.",
+                "careers.s1.t": "Application",
+                "careers.s1.d": "Résumé, portfolio, and cover letter to assess skills and culture fit.",
+                "careers.s2.t": "Technical interview",
+                "careers.s2.d": "Deep dive on core competencies and how you solve hard problems.",
+                "careers.s3.t": "Culture interview",
+                "careers.s3.d": "Align on collaboration style and values with future teammates.",
+                "careers.s4.t": "Offer & onboarding",
+                "careers.s4.d": "Comp, benefits, and start date—then welcome aboard.",
+                "careers.perk.h": "Benefits & culture",
+                "careers.perk.sub": "Sample list; actual policies shared at offer stage.",
+                "careers.p1": "Books & education budget",
+                "careers.p2": "Hybrid work",
+                "careers.p3": "Lunch & dinner",
+                "careers.p4": "Health screening",
+                "careers.p5": "Refresh leave",
+                "careers.p6": "Internal communities",
+                "careers.bottom.h": "Ready to join the team?",
+                "careers.bottom.p": "Talent team replies within 5 business days after review. (Sample copy)",
+                "careers.bottom.btn": "Contact recruiting",
                 "footer.about.title": "EDGA Corp",
                 "footer.about.description": "As an innovative company leading the global semiconductor industry, we create customer value with the best technology and quality.",
                 "footer.quickLinks": "Quick Links",
@@ -1605,6 +2248,58 @@
                 "detail.foundry.stat2": "先端リソグラフィ",
                 "detail.foundry.stat3": "生産歩留まり",
                 "detail.foundry.stat4": "パッケージング技術",
+                "nav.careers": "採用",
+                "careers.hero.tag": "SAMPLE · 2026年上半期採用",
+                "careers.hero.title": "次世代半導体を共に設計する仲間を募集",
+                "careers.hero.lead": "先端プロセスと設計を横断するエンジニア・研究・オペレーション職を随時募集。以下はサンプルポジションです。",
+                "careers.hero.btn": "募集中ポジションを見る",
+                "careers.why.h": "EDGAを選ぶ理由",
+                "careers.why.sub": "技術に集中する組織、グローバル顧客との協業、そして成長への投資が交わる場所です。",
+                "careers.why.1t": "技術中心の文化",
+                "careers.why.1d": "最新プロセス・設計スタックを扱い、社内セミナーとハッカソンでアイデアを素早く検証します。",
+                "careers.why.2t": "グローバルプロジェクト",
+                "careers.why.2d": "50カ国以上のパートナーと協業し、現地法人・顧客と密に連携する案件を経験できます。",
+                "careers.why.3t": "成長とワークライフ",
+                "careers.why.3d": "メンタリング、学習支援、健康診断、柔軟な勤務などとともに、個人の成長計画をチームで共有します。",
+                "careers.open.h": "募集中のポジション",
+                "careers.open.sub": "関心のある分野を選びJDを確認し、採用窓口へポートフォリオを送ってください。",
+                "careers.j1.title": "SoC設計エンジニア",
+                "careers.j1.tag1": "経験3年+",
+                "careers.j1.tag2": "盆唐",
+                "careers.j1.desc": "高性能SoCのRTL設計・検証、低消費電力アーキテクチャ最適化の経験者を歓迎します。",
+                "careers.j1.meta": "採用次第終了・面接3回",
+                "careers.j2.title": "プロセス統合エンジニア",
+                "careers.j2.tag1": "新卒・中途",
+                "careers.j2.tag2": "器興",
+                "careers.j2.desc": "EUV・パターニング工程連携、歩留まり改善のデータ分析に強みのある方を求めます。",
+                "careers.j2.meta": "2026.05.30締切・上半期入社",
+                "careers.j3.title": "クラウドインフラエンジニア",
+                "careers.j3.tag1": "中途",
+                "careers.j3.tag2": "ソウル",
+                "careers.j3.desc": "EDA・シミュレーション向けHPCクラスタ運用、FinOps的コスト最適化の経験を期待します。",
+                "careers.j3.meta": "随時採用・一次オンライン",
+                "careers.j.apply": "応募・問い合わせ",
+                "careers.proc.h": "採用プロセス",
+                "careers.proc.sub": "透明なステップと迅速なフィードバックをお約束します。",
+                "careers.s1.t": "書類選考",
+                "careers.s1.d": "履歴書・ポートフォリオ・カバーレターでスキルと文化適合を確認します。",
+                "careers.s2.t": "技術面接",
+                "careers.s2.d": "職務の中核能力と問題解決プロセスを深く議論します。",
+                "careers.s3.t": "カルチャー面接",
+                "careers.s3.d": "協業スタイルと価値観をチームとすり合わせます。",
+                "careers.s4.t": "条件協議・入社",
+                "careers.s4.d": "年収・福利・オンボーディング日程を調整し、合流を歓迎します。",
+                "careers.perk.h": "福利厚生・文化",
+                "careers.perk.sub": "サンプル構成です。実際の制度は内定時にご案内します。",
+                "careers.p1": "書籍・教育費支援",
+                "careers.p2": "ハイブリッド勤務",
+                "careers.p3": "昼食・夕食提供",
+                "careers.p4": "総合健康診断",
+                "careers.p5": "リフレッシュ休暇",
+                "careers.p6": "社内コミュニティ",
+                "careers.bottom.h": "今すぐチームに参加しませんか？",
+                "careers.bottom.p": "採用担当が確認後、5営業日以内に返信します。（サンプル文）",
+                "careers.bottom.btn": "採用チームに問い合わせ",
                 "footer.about.title": "EDGA株式会社",
                 "footer.about.description": "グローバル半導体産業をリードする革新的企業として、最高の技術と品質で顧客価値を創出します。",
                 "footer.quickLinks": "クイックリンク",
@@ -1683,6 +2378,58 @@
                 "detail.foundry.stat2": "先进光刻",
                 "detail.foundry.stat3": "生产良率",
                 "detail.foundry.stat4": "封装技术",
+                "nav.careers": "招聘",
+                "careers.hero.tag": "SAMPLE · 2026上半年招聘",
+                "careers.hero.title": "寻找一起设计下一代半导体的伙伴",
+                "careers.hero.lead": "长期招聘覆盖先进工艺与设计的工程、研究与运营岗位。以下为示例职位。",
+                "careers.hero.btn": "查看在招职位",
+                "careers.why.h": "为什么选择 EDGA",
+                "careers.why.sub": "技术驱动的组织、与全球客户协作，以及对人才成长的投资在这里汇聚。",
+                "careers.why.1t": "工程优先文化",
+                "careers.why.1d": "使用最新工艺与设计栈，通过内部技术分享与黑客松快速验证想法。",
+                "careers.why.2t": "全球项目",
+                "careers.why.2d": "与 50 多个国家的伙伴合作，深度参与区域团队与客户项目。",
+                "careers.why.3t": "成长与平衡",
+                "careers.why.3d": "导师制、学习预算、体检与弹性办公，并与团队共同制定个人成长计划。",
+                "careers.open.h": "在招职位",
+                "careers.open.sub": "选择方向查看职位说明，并通过招聘联系邮箱发送作品集。",
+                "careers.j1.title": "SoC 设计工程师",
+                "careers.j1.tag1": "3 年以上经验",
+                "careers.j1.tag2": "盆唐",
+                "careers.j1.desc": "高性能 SoC 的 RTL 设计/验证，具备低功耗架构优化经验者优先。",
+                "careers.j1.meta": "招满即止 · 面试共 3 轮",
+                "careers.j2.title": "工艺整合工程师",
+                "careers.j2.tag1": "应届/有经验",
+                "careers.j2.tag2": "器兴",
+                "careers.j2.desc": "EUV/图形化工艺联动与良率数据分析，欢迎数据敏感度强的候选人。",
+                "careers.j2.meta": "截止 2026.05.30 · 上半年入职",
+                "careers.j3.title": "云基础设施工程师",
+                "careers.j3.tag1": "有经验",
+                "careers.j3.tag2": "首尔",
+                "careers.j3.desc": "面向 EDA/仿真负载的 HPC 集群运维，具备 FinOps 成本优化经验更佳。",
+                "careers.j3.meta": "滚动招聘 · 首轮可远程",
+                "careers.j.apply": "投递/咨询",
+                "careers.proc.h": "招聘流程",
+                "careers.proc.sub": "流程透明，并在每个阶段尽快反馈。",
+                "careers.s1.t": "简历筛选",
+                "careers.s1.d": "通过简历、作品集与求职信评估能力与文化契合。",
+                "careers.s2.t": "技术面试",
+                "careers.s2.d": "深入讨论核心能力与解决问题的方式。",
+                "careers.s3.t": "文化面试",
+                "careers.s3.d": "与未来同事对齐协作风格与价值观。",
+                "careers.s4.t": "谈薪与入职",
+                "careers.s4.d": "协商薪酬、福利与入职安排，欢迎加入。",
+                "careers.perk.h": "福利与文化",
+                "careers.perk.sub": "以下为示例，正式政策将在录用阶段说明。",
+                "careers.p1": "图书与教育补贴",
+                "careers.p2": "混合办公",
+                "careers.p3": "午晚餐",
+                "careers.p4": "综合体检",
+                "careers.p5": "刷新假期",
+                "careers.p6": "内部社群",
+                "careers.bottom.h": "准备好加入团队了吗？",
+                "careers.bottom.p": "招聘同事会在审核后 5 个工作日内回复。（示例文案）",
+                "careers.bottom.btn": "联系招聘团队",
                 "footer.about.title": "EDGA株式会社",
                 "footer.about.description": "作为引领全球半导体行业的创新企业，我们以最佳技术和品质创造客户价值。",
                 "footer.quickLinks": "快速链接",
@@ -1737,6 +2484,7 @@
             document.getElementById('memory-detail').style.display = 'none';
             document.getElementById('system-detail').style.display = 'none';
             document.getElementById('foundry-detail').style.display = 'none';
+            document.getElementById('careers-detail').style.display = 'none';
             window.scrollTo({ top: 0, behavior: 'smooth' });
             return false;
         }
@@ -1746,6 +2494,7 @@
             document.getElementById('memory-detail').style.display = 'none';
             document.getElementById('system-detail').style.display = 'none';
             document.getElementById('foundry-detail').style.display = 'none';
+            document.getElementById('careers-detail').style.display = 'none';
             
             document.getElementById(service + '-detail').style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
