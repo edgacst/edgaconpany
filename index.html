@@ -54,8 +54,7 @@
         
         /* 헤더 스타일 */
         header {
-            background: rgba(0, 31, 63, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 31, 63, 0.98);
             position: fixed;
             width: 100%;
             top: 0;
@@ -2519,10 +2518,10 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 31, 63, 0.98)';
+                header.style.background = 'rgba(0, 31, 63, 1)';
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             } else {
-                header.style.background = 'rgba(0, 31, 63, 0.95)';
+                header.style.background = 'rgba(0, 31, 63, 0.98)';
                 header.style.boxShadow = 'none';
             }
         });
