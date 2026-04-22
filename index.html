@@ -17,6 +17,14 @@
             --dark: #212529;
             --gray: #6C757D;
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            
+            /* 서비스별 컬러 */
+            --memory-color: #4361EE;
+            --memory-light: #4895EF;
+            --system-color: #7209B7;
+            --system-light: #B5179E;
+            --foundry-color: #F72585;
+            --foundry-light: #FF70A6;
         }
         
         * {
@@ -202,9 +210,9 @@
             cursor: pointer;
         }
         
-        /* 히어로 섹션 - 회사 전경 사진으로 변경 */
+        /* 히어로 섹션 */
         .hero {
-            background: linear-gradient(135deg, rgba(0, 31, 63, 0.85) 0%, rgba(0, 52, 102, 0.75) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(135deg, rgba(0, 31, 63, 0.9) 0%, rgba(0, 52, 102, 0.8) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -339,7 +347,7 @@
             font-size: 1.1rem;
         }
         
-        /* 회사 소개 - 회사 전경 사진 추가 */
+        /* 회사 소개 */
         .about {
             background: var(--light);
             position: relative;
@@ -459,7 +467,18 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+        
+        .memory-card::before {
+            background: linear-gradient(90deg, var(--memory-color), var(--memory-light));
+        }
+        
+        .system-card::before {
+            background: linear-gradient(90deg, var(--system-color), var(--system-light));
+        }
+        
+        .foundry-card::before {
+            background: linear-gradient(90deg, var(--foundry-color), var(--foundry-light));
         }
         
         .service-card:hover {
@@ -473,8 +492,19 @@
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            color: var(--accent);
             background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), rgba(144, 224, 239, 0.1));
+        }
+        
+        .memory-card .service-icon {
+            color: var(--memory-color);
+        }
+        
+        .system-card .service-icon {
+            color: var(--system-color);
+        }
+        
+        .foundry-card .service-icon {
+            color: var(--foundry-color);
         }
         
         .service-content {
@@ -496,10 +526,21 @@
         .service-link {
             display: inline-flex;
             align-items: center;
-            color: var(--accent);
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
+        }
+        
+        .memory-card .service-link {
+            color: var(--memory-color);
+        }
+        
+        .system-card .service-link {
+            color: var(--system-color);
+        }
+        
+        .foundry-card .service-link {
+            color: var(--foundry-color);
         }
         
         .service-link i {
@@ -530,7 +571,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             opacity: 0.1;
@@ -719,6 +760,89 @@
             font-size: 0.9rem;
         }
         
+        /* 상세 페이지 스타일 */
+        .detail-page {
+            display: none;
+        }
+        
+        .service-hero {
+            padding: 180px 0 100px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .service-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .service-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .service-breadcrumb {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        
+        .service-breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .service-breadcrumb a:hover {
+            color: var(--accent-light);
+        }
+        
+        .service-breadcrumb span {
+            margin: 0 10px;
+            opacity: 0.7;
+        }
+        
+        .memory-detail .service-hero {
+            background: linear-gradient(135deg, var(--memory-color), var(--memory-light)), url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .system-detail .service-hero {
+            background: linear-gradient(135deg, var(--system-color), var(--system-light)), url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .foundry-detail .service-hero {
+            background: linear-gradient(135deg, var(--foundry-color), var(--foundry-light)), url('https://images.unsplash.com/photo-1581094794329-cd6d23d77e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
         /* 반응형 디자인 */
         @media (max-width: 1200px) {
             .hero h1 {
@@ -818,18 +942,18 @@
     <!-- 헤더 -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="showHomePage()">
                 <div class="logo-icon">E</div>
                 <div class="logo-text">EDGA<span>Corp</span></div>
             </a>
             
             <nav>
                 <ul>
-                    <li><a href="#home" data-i18n="nav.home">홈</a></li>
-                    <li><a href="#about" data-i18n="nav.about">회사소개</a></li>
-                    <li><a href="#services" data-i18n="nav.services">제품/서비스</a></li>
-                    <li><a href="#technology" data-i18n="nav.technology">기술력</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">연락처</a></li>
+                    <li><a href="#" onclick="showHomePage()" data-i18n="nav.home">홈</a></li>
+                    <li><a href="#about" onclick="showHomePage()" data-i18n="nav.about">회사소개</a></li>
+                    <li><a href="#services" onclick="showHomePage()" data-i18n="nav.services">제품/서비스</a></li>
+                    <li><a href="#technology" onclick="showHomePage()" data-i18n="nav.technology">기술력</a></li>
+                    <li><a href="#contact" onclick="showHomePage()" data-i18n="nav.contact">연락처</a></li>
                 </ul>
             </nav>
             
@@ -850,173 +974,344 @@
         </div>
     </header>
 
-    <!-- 히어로 섹션 - 회사 전경 사진으로 변경 -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge" data-i18n="hero.badge">
-                    <i class="fas fa-rocket"></i> 글로벌 반도체 기술 리더
+    <!-- 메인 홈페이지 -->
+    <div id="home-page">
+        <!-- 히어로 섹션 -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge" data-i18n="hero.badge">
+                        <i class="fas fa-rocket"></i> 글로벌 반도체 기술 리더
+                    </div>
+                    <h1 data-i18n="hero.title">미래 기술을 선도하는<br>차세대 반도체 솔루션</h1>
+                    <p data-i18n="hero.description">에드가주식회사는 혁신적인 반도체 기술로 디지털 트랜스포메이션 시대를 주도합니다. 최첨단 공정 기술과 품질 경영으로 더 나은 미래를 만들어갑니다.</p>
+                    <div class="btn-group">
+                        <a href="#about" class="btn btn-primary" data-i18n="hero.cta.learn">더 알아보기</a>
+                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta.contact">문의하기</a>
+                    </div>
                 </div>
-                <h1 data-i18n="hero.title">미래 기술을 선도하는<br>차세대 반도체 솔루션</h1>
-                <p data-i18n="hero.description">에드가주식회사는 혁신적인 반도체 기술로 디지털 트랜스포메이션 시대를 주도합니다. 최첨단 공정 기술과 품질 경영으로 더 나은 미래를 만들어갑니다.</p>
-                <div class="btn-group">
-                    <a href="#about" class="btn btn-primary" data-i18n="hero.cta.learn">더 알아보기</a>
-                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta.contact">문의하기</a>
-                </div>
+                <div class="hero-visual"></div>
             </div>
-            <div class="hero-visual"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 회사 소개 - 회사 전경 사진 추가 -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-subtitle" data-i18n="about.subtitle">About Us</div>
-                <h2 class="section-title" data-i18n="about.title">글로벌 반도체 산업의 리더</h2>
-                <p class="section-desc" data-i18n="about.description">에드가주식회사는 1995년 설립 이래로 혁신적인 반도체 기술 개발과 생산을 통해 글로벌 시장에서 두각을 나타내고 있습니다.</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 data-i18n="about.subheading">기술 혁신과 품질 경영의 최우선</h3>
-                    <p data-i18n="about.paragraph1">에드가주식회사는 첨단 반도체 설계, 개발 및 생산을 위한 종합 솔루션을 제공하는 글로벌 기업입니다. 우리의 혁신적인 기술과 품질 경영 시스템은 고객에게 최고의 가치를 제공합니다.</p>
-                    <p data-i18n="about.paragraph2">전 세계 50개국 이상의 고객사와 파트너십을 통해 다양한 산업 분야에 최적화된 반도체 솔루션을 제공하고 있습니다. 지속적인 연구 개발 투자와 기술 혁신을 통해 4차 산업혁명 시대를 선도하는 기업으로 성장하고 있습니다.</p>
+        <!-- 회사 소개 -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-subtitle" data-i18n="about.subtitle">About Us</div>
+                    <h2 class="section-title" data-i18n="about.title">글로벌 반도체 산업의 리더</h2>
+                    <p class="section-desc" data-i18n="about.description">에드가주식회사는 1995년 설립 이래로 혁신적인 반도체 기술 개발과 생산을 통해 글로벌 시장에서 두각을 나타내고 있습니다.</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3 data-i18n="about.subheading">기술 혁신과 품질 경영의 최우선</h3>
+                        <p data-i18n="about.paragraph1">에드가주식회사는 첨단 반도체 설계, 개발 및 생산을 위한 종합 솔루션을 제공하는 글로벌 기업입니다. 우리의 혁신적인 기술과 품질 경영 시스템은 고객에게 최고의 가치를 제공합니다.</p>
+                        <p data-i18n="about.paragraph2">전 세계 50개국 이상의 고객사와 파트너십을 통해 다양한 산업 분야에 최적화된 반도체 솔루션을 제공하고 있습니다. 지속적인 연구 개발 투자와 기술 혁신을 통해 4차 산업혁명 시대를 선도하는 기업으로 성장하고 있습니다.</p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">28+</div>
+                                <div class="stat-label" data-i18n="about.stats.years">설립 연차</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">5,000+</div>
+                                <div class="stat-label" data-i18n="about.stats.engineers">전문 엔지니어</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label" data-i18n="about.stats.countries">진출 국가</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">1,200+</div>
+                                <div class="stat-label" data-i18n="about.stats.patents">등록 특허</div>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">28+</div>
-                            <div class="stat-label" data-i18n="about.stats.years">설립 연차</div>
+                    <div class="about-visual">
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="에드가주식회사 본사 전경" data-i18n="about.imageAlt">
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5,000+</div>
-                            <div class="stat-label" data-i18n="about.stats.engineers">전문 엔지니어</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label" data-i18n="about.stats.countries">진출 국가</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">1,200+</div>
-                            <div class="stat-label" data-i18n="about.stats.patents">등록 특허</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-visual">
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="에드가주식회사 본사 전경" data-i18n="about.imageAlt">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 제품 및 서비스 -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-subtitle" data-i18n="services.subtitle">Our Solutions</div>
-                <h2 class="section-title" data-i18n="services.title">제품 및 서비스</h2>
-                <p class="section-desc" data-i18n="services.description">에드가주식회사는 다양한 산업 분야에 최적화된 반도체 솔루션을 제공합니다.</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 data-i18n="services.memory.title">메모리 반도체</h3>
-                        <p data-i18n="services.memory.description">고성능 DRAM, NAND Flash 메모리 등 다양한 메모리 반도체 솔루션을 제공합니다. 데이터 중심 시대에 최적화된 고용량, 고속 메모리 제품을 개발합니다.</p>
-                        <a href="#" class="service-link" data-i18n="services.learnMore">
-                            자세히 보기 <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+        <!-- 제품 및 서비스 -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-subtitle" data-i18n="services.subtitle">Our Solutions</div>
+                    <h2 class="section-title" data-i18n="services.title">제품 및 서비스</h2>
+                    <p class="section-desc" data-i18n="services.description">에드가주식회사는 다양한 산업 분야에 최적화된 반도체 솔루션을 제공합니다.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="services-grid">
+                    <div class="service-card memory-card">
+                        <div class="service-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 data-i18n="services.memory.title">메모리 반도체</h3>
+                            <p data-i18n="services.memory.description">고성능 DRAM, NAND Flash 메모리 등 다양한 메모리 반도체 솔루션을 제공합니다. 데이터 중심 시대에 최적화된 고용량, 고속 메모리 제품을 개발합니다.</p>
+                            <a href="#" class="service-link" onclick="showDetailPage('memory')" data-i18n="services.learnMore">
+                                자세히 보기 <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <h3 data-i18n="services.system.title">시스템 반도체</h3>
-                        <p data-i18n="services.system.description">AI, IoT, 자율주행 등 미래 기술을 위한 시스템 반도체를 개발합니다. 고성능 프로세서와 특수 목적 IC 설계 및 생산을 담당하고 있습니다.</p>
-                        <a href="#" class="service-link" data-i18n="services.learnMore">
-                            자세히 보기 <i class="fas fa-arrow-right"></i>
-                        </a>
+                    
+                    <div class="service-card system-card">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 data-i18n="services.system.title">시스템 반도체</h3>
+                            <p data-i18n="services.system.description">AI, IoT, 자율주행 등 미래 기술을 위한 시스템 반도체를 개발합니다. 고성능 프로세서와 특수 목적 IC 설계 및 생산을 담당하고 있습니다.</p>
+                            <a href="#" class="service-link" onclick="showDetailPage('system')" data-i18n="services.learnMore">
+                                자세히 보기 <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3 data-i18n="services.foundry.title">파운드리 서비스</h3>
-                        <p data-i18n="services.foundry.description">최첨단 공정 기술을 바탕으로 고객 맞춤형 파운드리 서비스를 제공합니다. 다양한 공정 노드와 패키징 솔루션으로 고객의 요구에 부응합니다.</p>
-                        <a href="#" class="service-link" data-i18n="services.learnMore">
-                            자세히 보기 <i class="fas fa-arrow-right"></i>
-                        </a>
+                    
+                    <div class="service-card foundry-card">
+                        <div class="service-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 data-i18n="services.foundry.title">파운드리 서비스</h3>
+                            <p data-i18n="services.foundry.description">최첨단 공정 기술을 바탕으로 고객 맞춤형 파운드리 서비스를 제공합니다. 다양한 공정 노드와 패키징 솔루션으로 고객의 요구에 부응합니다.</p>
+                            <a href="#" class="service-link" onclick="showDetailPage('foundry')" data-i18n="services.learnMore">
+                                자세히 보기 <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 기술력 -->
-    <section class="technology" id="technology">
-        <div class="container">
-            <div class="section-header light">
-                <div class="section-subtitle" data-i18n="technology.subtitle">Our Technology</div>
-                <h2 class="section-title" data-i18n="technology.title">기술력</h2>
-                <p class="section-desc" data-i18n="technology.description">에드가주식회사의 기술적 우수성과 혁신을 보여주는 주요 지표입니다.</p>
+        <!-- 기술력 -->
+        <section class="technology" id="technology">
+            <div class="container">
+                <div class="section-header light">
+                    <div class="section-subtitle" data-i18n="technology.subtitle">Our Technology</div>
+                    <h2 class="section-title" data-i18n="technology.title">기술력</h2>
+                    <p class="section-desc" data-i18n="technology.description">에드가주식회사의 기술적 우수성과 혁신을 보여주는 주요 지표입니다.</p>
+                </div>
+                
+                <div class="tech-stats">
+                    <div class="tech-stat">
+                        <div class="tech-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <div class="tech-number">5nm</div>
+                        <div class="tech-label" data-i18n="technology.process">최첨단 공정 기술</div>
+                    </div>
+                    
+                    <div class="tech-stat">
+                        <div class="tech-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="tech-number">1,200+</div>
+                        <div class="tech-label" data-i18n="technology.patents">등록 특허</div>
+                    </div>
+                    
+                    <div class="tech-stat">
+                        <div class="tech-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div class="tech-number">50+</div>
+                        <div class="tech-label" data-i18n="technology.countries">진출 국가</div>
+                    </div>
+                    
+                    <div class="tech-stat">
+                        <div class="tech-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="tech-number">15%</div>
+                        <div class="tech-label" data-i18n="technology.rd">매년 R&D 투자</div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="tech-stats">
-                <div class="tech-stat">
-                    <div class="tech-icon">
-                        <i class="fas fa-ruler-combined"></i>
-                    </div>
-                    <div class="tech-number">5nm</div>
-                    <div class="tech-label" data-i18n="technology.process">최첨단 공정 기술</div>
-                </div>
-                
-                <div class="tech-stat">
-                    <div class="tech-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="tech-number">1,200+</div>
-                    <div class="tech-label" data-i18n="technology.patents">등록 특허</div>
-                </div>
-                
-                <div class="tech-stat">
-                    <div class="tech-icon">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <div class="tech-number">50+</div>
-                    <div class="tech-label" data-i18n="technology.countries">진출 국가</div>
-                </div>
-                
-                <div class="tech-stat">
-                    <div class="tech-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <div class="tech-number">15%</div>
-                    <div class="tech-label" data-i18n="technology.rd">매년 R&D 투자</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA 섹션 -->
-    <section class="cta">
-        <div class="container">
-            <h2 data-i18n="cta.title">함께 미래를 만들어 갈 인재를 찾습니다</h2>
-            <p data-i18n="cta.description">에드가주식회사와 함께 혁신적인 반도체 기술을 개발하며 글로벌 시장을 선도할 인재를 기다립니다.</p>
-            <a href="#" class="btn btn-light" data-i18n="cta.button">채용 정보 보기</a>
-        </div>
-    </section>
+        <!-- CTA 섹션 -->
+        <section class="cta">
+            <div class="container">
+                <h2 data-i18n="cta.title">함께 미래를 만들어 갈 인재를 찾습니다</h2>
+                <p data-i18n="cta.description">에드가주식회사와 함께 혁신적인 반도체 기술을 개발하며 글로벌 시장을 선도할 인재를 기다립니다.</p>
+                <a href="#" class="btn btn-light" data-i18n="cta.button">채용 정보 보기</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- 메모리 반도체 상세 페이지 -->
+    <div id="memory-detail" class="detail-page memory-detail">
+        <section class="service-hero">
+            <div class="container">
+                <div class="service-breadcrumb">
+                    <a onclick="showHomePage()" data-i18n="nav.home">홈</a>
+                    <span>></span>
+                    <a onclick="showHomePage()" data-i18n="nav.services">제품/서비스</a>
+                    <span>></span>
+                    <a data-i18n="services.memory.title">메모리 반도체</a>
+                </div>
+                <div class="service-hero-content">
+                    <h1 data-i18n="services.memory.title">메모리 반도체</h1>
+                    <p data-i18n="detail.memory.description">데이터 중심 시대를 위한 고성능, 고용량 메모리 솔루션</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 data-i18n="detail.memory.sectionTitle">차세대 메모리 기술의 선도자</h2>
+                        <p data-i18n="detail.memory.sectionText1">에드가주식회사는 세계 최고 수준의 메모리 반도체 기술을 보유하고 있으며, 데이터 중심의 디지털 시대에 최적화된 메모리 솔루션을 제공합니다.</p>
+                        <p data-i18n="detail.memory.sectionText2">고성능 DRAM과 초고속 NAND Flash 메모리를 비롯한 다양한 메모리 제품을 개발하며, AI, 빅데이터, 클라우드 컴퓨팅 등 다양한 분야에 혁신을 가져오고 있습니다.</p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">8.4Gbps</div>
+                                <div class="stat-label" data-i18n="detail.memory.stat1">최대 데이터 전송률</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2TB</div>
+                                <div class="stat-label" data-i18n="detail.memory.stat2">최대 저장 용량</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">30%</div>
+                                <div class="stat-label" data-i18n="detail.memory.stat3">에너지 효율 향상</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">176단</div>
+                                <div class="stat-label" data-i18n="detail.memory.stat4">3D NAND 구조</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="메모리 반도체 기술">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 시스템 반도체 상세 페이지 -->
+    <div id="system-detail" class="detail-page system-detail">
+        <section class="service-hero">
+            <div class="container">
+                <div class="service-breadcrumb">
+                    <a onclick="showHomePage()" data-i18n="nav.home">홈</a>
+                    <span>></span>
+                    <a onclick="showHomePage()" data-i18n="nav.services">제품/서비스</a>
+                    <span>></span>
+                    <a data-i18n="services.system.title">시스템 반도체</a>
+                </div>
+                <div class="service-hero-content">
+                    <h1 data-i18n="services.system.title">시스템 반도체</h1>
+                    <p data-i18n="detail.system.description">AI와 미래 기술을 위한 지능형 시스템 반도체</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 data-i18n="detail.system.sectionTitle">지능형 시스템 반도체의 혁신</h2>
+                        <p data-i18n="detail.system.sectionText1">에드가주식회사는 AI, IoT, 자율주행 등 미래 기술을 위한 고성능 시스템 반도체를 개발하고 있습니다.</p>
+                        <p data-i18n="detail.system.sectionText2">고성능 프로세서와 특수 목적 IC 설계 및 생산을 통해 다양한 산업 분야에 혁신을 가져오고 있습니다.</p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label" data-i18n="detail.system.stat1">TOPS AI 성능</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24코어</div>
+                                <div class="stat-label" data-i18n="detail.system.stat2">최대 프로세서 코어</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">8K</div>
+                                <div class="stat-label" data-i18n="detail.system.stat3">실시간 영상 처리</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">레벨4</div>
+                                <div class="stat-label" data-i18n="detail.system.stat4">자율주행 지원</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="시스템 반도체 기술">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 파운드리 서비스 상세 페이지 -->
+    <div id="foundry-detail" class="detail-page foundry-detail">
+        <section class="service-hero">
+            <div class="container">
+                <div class="service-breadcrumb">
+                    <a onclick="showHomePage()" data-i18n="nav.home">홈</a>
+                    <span>></span>
+                    <a onclick="showHomePage()" data-i18n="nav.services">제품/서비스</a>
+                    <span>></span>
+                    <a data-i18n="services.foundry.title">파운드리 서비스</a>
+                </div>
+                <div class="service-hero-content">
+                    <h1 data-i18n="services.foundry.title">파운드리 서비스</h1>
+                    <p data-i18n="detail.foundry.description">최첨단 공정 기술을 통한 고객 맞춤형 생산 서비스</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 data-i18n="detail.foundry.sectionTitle">세계적 수준의 파운드리 서비스</h2>
+                        <p data-i18n="detail.foundry.sectionText1">에드가주식회사는 최첨단 공정 기술을 바탕으로 고객 맞춤형 파운드리 서비스를 제공합니다.</p>
+                        <p data-i18n="detail.foundry.sectionText2">다양한 공정 노드와 패키징 솔루션으로 고객의 요구에 부응하며, 반도체 산업 생태계를 선도하고 있습니다.</p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">5nm</div>
+                                <div class="stat-label" data-i18n="detail.foundry.stat1">최첨단 공정</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">EUV</div>
+                                <div class="stat-label" data-i18n="detail.foundry.stat2">첨단 리소그래피</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">99.9%</div>
+                                <div class="stat-label" data-i18n="detail.foundry.stat3">생산 수율</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">3D</div>
+                                <div class="stat-label" data-i18n="detail.foundry.stat4">패키징 기술</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1581094794329-cd6d23d77e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="파운드리 서비스">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- 푸터 -->
     <footer id="contact">
@@ -1036,11 +1331,11 @@
                 <div class="footer-column">
                     <h3 data-i18n="footer.quickLinks">빠른 링크</h3>
                     <ul class="footer-links">
-                        <li><a href="#home" data-i18n="nav.home">홈</a></li>
-                        <li><a href="#about" data-i18n="nav.about">회사소개</a></li>
-                        <li><a href="#services" data-i18n="nav.services">제품/서비스</a></li>
-                        <li><a href="#technology" data-i18n="nav.technology">기술력</a></li>
-                        <li><a href="#contact" data-i18n="nav.contact">연락처</a></li>
+                        <li><a href="#" onclick="showHomePage()" data-i18n="nav.home">홈</a></li>
+                        <li><a href="#about" onclick="showHomePage()" data-i18n="nav.about">회사소개</a></li>
+                        <li><a href="#services" onclick="showHomePage()" data-i18n="nav.services">제품/서비스</a></li>
+                        <li><a href="#technology" onclick="showHomePage()" data-i18n="nav.technology">기술력</a></li>
+                        <li><a href="#contact" onclick="showHomePage()" data-i18n="nav.contact">연락처</a></li>
                     </ul>
                 </div>
                 
@@ -1130,6 +1425,30 @@
                 "cta.title": "함께 미래를 만들어 갈 인재를 찾습니다",
                 "cta.description": "에드가주식회사와 함께 혁신적인 반도체 기술을 개발하며 글로벌 시장을 선도할 인재를 기다립니다.",
                 "cta.button": "채용 정보 보기",
+                "detail.memory.description": "데이터 중심 시대를 위한 고성능, 고용량 메모리 솔루션",
+                "detail.memory.sectionTitle": "차세대 메모리 기술의 선도자",
+                "detail.memory.sectionText1": "에드가주식회사는 세계 최고 수준의 메모리 반도체 기술을 보유하고 있으며, 데이터 중심의 디지털 시대에 최적화된 메모리 솔루션을 제공합니다.",
+                "detail.memory.sectionText2": "고성능 DRAM과 초고속 NAND Flash 메모리를 비롯한 다양한 메모리 제품을 개발하며, AI, 빅데이터, 클라우드 컴퓨팅 등 다양한 분야에 혁신을 가져오고 있습니다.",
+                "detail.memory.stat1": "최대 데이터 전송률",
+                "detail.memory.stat2": "최대 저장 용량",
+                "detail.memory.stat3": "에너지 효율 향상",
+                "detail.memory.stat4": "3D NAND 구조",
+                "detail.system.description": "AI와 미래 기술을 위한 지능형 시스템 반도체",
+                "detail.system.sectionTitle": "지능형 시스템 반도체의 혁신",
+                "detail.system.sectionText1": "에드가주식회사는 AI, IoT, 자율주행 등 미래 기술을 위한 고성능 시스템 반도체를 개발하고 있습니다.",
+                "detail.system.sectionText2": "고성능 프로세서와 특수 목적 IC 설계 및 생산을 통해 다양한 산업 분야에 혁신을 가져오고 있습니다.",
+                "detail.system.stat1": "TOPS AI 성능",
+                "detail.system.stat2": "최대 프로세서 코어",
+                "detail.system.stat3": "실시간 영상 처리",
+                "detail.system.stat4": "자율주행 지원",
+                "detail.foundry.description": "최첨단 공정 기술을 통한 고객 맞춤형 생산 서비스",
+                "detail.foundry.sectionTitle": "세계적 수준의 파운드리 서비스",
+                "detail.foundry.sectionText1": "에드가주식회사는 최첨단 공정 기술을 바탕으로 고객 맞춤형 파운드리 서비스를 제공합니다.",
+                "detail.foundry.sectionText2": "다양한 공정 노드와 패키징 솔루션으로 고객의 요구에 부응하며, 반도체 산업 생태계를 선도하고 있습니다.",
+                "detail.foundry.stat1": "최첨단 공정",
+                "detail.foundry.stat2": "첨단 리소그래피",
+                "detail.foundry.stat3": "생산 수율",
+                "detail.foundry.stat4": "패키징 기술",
                 "footer.about.title": "에드가주식회사",
                 "footer.about.description": "글로벌 반도체 산업을 선도하는 혁신적인 기업으로서 최고의 기술과 품질로 고객 가치를 창출합니다.",
                 "footer.quickLinks": "빠른 링크",
@@ -1184,6 +1503,30 @@
                 "cta.title": "Looking for Talents to Create the Future Together",
                 "cta.description": "We are waiting for talents who will develop innovative semiconductor technology and lead the global market with EDGA Corp.",
                 "cta.button": "View Career Opportunities",
+                "detail.memory.description": "High-performance, high-capacity memory solutions for the data-centric era",
+                "detail.memory.sectionTitle": "Leader in Next-Generation Memory Technology",
+                "detail.memory.sectionText1": "EDGA Corp possesses world-class memory semiconductor technology and provides memory solutions optimized for the data-centric digital era.",
+                "detail.memory.sectionText2": "We develop various memory products including high-performance DRAM and ultra-fast NAND Flash memory, bringing innovation to various fields such as AI, big data, and cloud computing.",
+                "detail.memory.stat1": "Maximum Data Transfer Rate",
+                "detail.memory.stat2": "Maximum Storage Capacity",
+                "detail.memory.stat3": "Energy Efficiency Improvement",
+                "detail.memory.stat4": "3D NAND Structure",
+                "detail.system.description": "Intelligent system semiconductors for AI and future technologies",
+                "detail.system.sectionTitle": "Innovation in Intelligent System Semiconductors",
+                "detail.system.sectionText1": "EDGA Corp develops high-performance system semiconductors for future technologies such as AI, IoT, and autonomous driving.",
+                "detail.system.sectionText2": "We bring innovation to various industrial fields through the design and production of high-performance processors and application-specific ICs.",
+                "detail.system.stat1": "TOPS AI Performance",
+                "detail.system.stat2": "Maximum Processor Cores",
+                "detail.system.stat3": "Real-time Video Processing",
+                "detail.system.stat4": "Autonomous Driving Support",
+                "detail.foundry.description": "Customer-customized production services through cutting-edge process technology",
+                "detail.foundry.sectionTitle": "World-class Foundry Services",
+                "detail.foundry.sectionText1": "EDGA Corp provides customer-customized foundry services based on cutting-edge process technology.",
+                "detail.foundry.sectionText2": "We respond to customer needs with various process nodes and packaging solutions, leading the semiconductor industry ecosystem.",
+                "detail.foundry.stat1": "Advanced Process",
+                "detail.foundry.stat2": "Advanced Lithography",
+                "detail.foundry.stat3": "Production Yield",
+                "detail.foundry.stat4": "Packaging Technology",
                 "footer.about.title": "EDGA Corp",
                 "footer.about.description": "As an innovative company leading the global semiconductor industry, we create customer value with the best technology and quality.",
                 "footer.quickLinks": "Quick Links",
@@ -1238,6 +1581,30 @@
                 "cta.title": "共に未来を創る人材を求めています",
                 "cta.description": "EDGA株式会社と共に革新的な半導体技術を開発し、グローバル市場をリードする人材をお待ちしています。",
                 "cta.button": "採用情報を見る",
+                "detail.memory.description": "データ中心時代のための高性能、高容量メモリソリューション",
+                "detail.memory.sectionTitle": "次世代メモリ技術のリーダー",
+                "detail.memory.sectionText1": "EDGA株式会社は世界最高水準のメモリ半導体技術を保有しており、データ中心のデジタル時代に最適化されたメモリソリューションを提供します。",
+                "detail.memory.sectionText2": "高性能DRAMと超高速NAND Flashメモリをはじめとする様々なメモリ製品を開発し、AI、ビッグデータ、クラウドコンピューティングなど様々な分野に革新をもたらしています。",
+                "detail.memory.stat1": "最大データ転送率",
+                "detail.memory.stat2": "最大保存容量",
+                "detail.memory.stat3": "エネルギー効率向上",
+                "detail.memory.stat4": "3D NAND構造",
+                "detail.system.description": "AIと未来技術のための知能型システム半導体",
+                "detail.system.sectionTitle": "知能型システム半導体の革新",
+                "detail.system.sectionText1": "EDGA株式会社は、AI、IoT、自動運転などの未来技術のための高性能システム半導体を開発しています。",
+                "detail.system.sectionText2": "高性能プロセッサと特定用途向けICの設計及び生産を通じて、様々な産業分野に革新をもたらしています。",
+                "detail.system.stat1": "TOPS AI性能",
+                "detail.system.stat2": "最大プロセッサコア",
+                "detail.system.stat3": "リアルタイム映像処理",
+                "detail.system.stat4": "自動運転支援",
+                "detail.foundry.description": "最先端プロセス技術による顧客カスタマイズ型生産サービス",
+                "detail.foundry.sectionTitle": "世界的水準のファウンドリサービス",
+                "detail.foundry.sectionText1": "EDGA株式会社は、最先端プロセス技術に基づいて顧客カスタマイズ型ファウンドリサービスを提供します。",
+                "detail.foundry.sectionText2": "様々なプロセスノードとパッケージングソリューションで顧客の要求に応え、半導体産業生態系をリードしています。",
+                "detail.foundry.stat1": "最先端プロセス",
+                "detail.foundry.stat2": "先端リソグラフィ",
+                "detail.foundry.stat3": "生産歩留まり",
+                "detail.foundry.stat4": "パッケージング技術",
                 "footer.about.title": "EDGA株式会社",
                 "footer.about.description": "グローバル半導体産業をリードする革新的企業として、最高の技術と品質で顧客価値を創出します。",
                 "footer.quickLinks": "クイックリンク",
@@ -1292,6 +1659,30 @@
                 "cta.title": "寻找共同创造未来的人才",
                 "cta.description": "我们期待与EDGA株式会社一起开发创新半导体技术并引领全球市场的人才。",
                 "cta.button": "查看招聘信息",
+                "detail.memory.description": "为数据为中心时代的高性能、高容量存储器解决方案",
+                "detail.memory.sectionTitle": "下一代存储器技术的领导者",
+                "detail.memory.sectionText1": "EDGA株式会社拥有世界一流水平的存储器半导体技术，为数据为中心的数字时代提供优化的存储器解决方案。",
+                "detail.memory.sectionText2": "我们开发包括高性能DRAM和超高速NAND闪存在内的各种存储器产品，为AI、大数据、云计算等多个领域带来创新。",
+                "detail.memory.stat1": "最大数据传输率",
+                "detail.memory.stat2": "最大存储容量",
+                "detail.memory.stat3": "能源效率提升",
+                "detail.memory.stat4": "3D NAND结构",
+                "detail.system.description": "为AI和未来技术的智能系统半导体",
+                "detail.system.sectionTitle": "智能系统半导体的创新",
+                "detail.system.sectionText1": "EDGA株式会社为AI、物联网、自动驾驶等未来技术开发高性能系统半导体。",
+                "detail.system.sectionText2": "我们通过设计和生产高性能处理器及专用集成电路，为各种产业领域带来创新。",
+                "detail.system.stat1": "TOPS AI性能",
+                "detail.system.stat2": "最大处理器核心",
+                "detail.system.stat3": "实时视频处理",
+                "detail.system.stat4": "自动驾驶支持",
+                "detail.foundry.description": "通过尖端工艺技术的客户定制化生产服务",
+                "detail.foundry.sectionTitle": "世界级晶圆代工服务",
+                "detail.foundry.sectionText1": "EDGA株式会社基于尖端工艺技术提供客户定制化晶圆代工服务。",
+                "detail.foundry.sectionText2": "我们通过各种工艺节点和封装解决方案满足客户需求，引领半导体产业生态系统。",
+                "detail.foundry.stat1": "尖端工艺",
+                "detail.foundry.stat2": "先进光刻",
+                "detail.foundry.stat3": "生产良率",
+                "detail.foundry.stat4": "封装技术",
                 "footer.about.title": "EDGA株式会社",
                 "footer.about.description": "作为引领全球半导体行业的创新企业，我们以最佳技术和品质创造客户价值。",
                 "footer.quickLinks": "快速链接",
@@ -1340,24 +1731,33 @@
             document.documentElement.lang = lang;
         }
 
-        // 페이지 로드 시 언어 설정
+        // 페이지 전환 함수
+        function showHomePage() {
+            document.getElementById('home-page').style.display = 'block';
+            document.getElementById('memory-detail').style.display = 'none';
+            document.getElementById('system-detail').style.display = 'none';
+            document.getElementById('foundry-detail').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return false;
+        }
+
+        function showDetailPage(service) {
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('memory-detail').style.display = 'none';
+            document.getElementById('system-detail').style.display = 'none';
+            document.getElementById('foundry-detail').style.display = 'none';
+            
+            document.getElementById(service + '-detail').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return false;
+        }
+
+        // 페이지 로드 시 초기화
         document.addEventListener('DOMContentLoaded', function() {
             // 저장된 언어 선호도 확인
             const savedLanguage = localStorage.getItem('preferred-language');
             if (savedLanguage) {
                 changeLanguage(savedLanguage);
-            } else {
-                // 브라우저 언어 감지
-                const browserLang = navigator.language || navigator.userLanguage;
-                if (browserLang.startsWith('ko')) {
-                    changeLanguage('ko');
-                } else if (browserLang.startsWith('ja')) {
-                    changeLanguage('ja');
-                } else if (browserLang.startsWith('zh')) {
-                    changeLanguage('zh');
-                } else {
-                    changeLanguage('en');
-                }
             }
             
             // 언어 선택 이벤트 리스너
@@ -1384,21 +1784,23 @@
             nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
         });
         
-        // 네비게이션 링크 스크롤 부드럽게
+        // 네비게이션 링크 스크롤 부드럽게 (메인 페이지에서만)
         document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId !== '#') {
-                    const targetElement = document.querySelector(targetId);
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // 모바일에서 메뉴 닫기
-                    if (window.innerWidth <= 768) {
-                        document.querySelector('nav').style.display = 'none';
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // 모바일에서 메뉴 닫기
+                        if (window.innerWidth <= 768) {
+                            document.querySelector('nav').style.display = 'none';
+                        }
                     }
                 }
             });
